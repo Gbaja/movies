@@ -11,8 +11,14 @@ class DirectoryContainer extends Component {
     directoryRequest()
       .then(res => {
         const moviesResult = res.results.map(result => {
-          const { id, original_title, poster_path, release_date } = result;
-          return { id, original_title, poster_path, release_date };
+          const {
+            id,
+            original_title,
+            poster_path,
+            release_date,
+            overview
+          } = result;
+          return { id, original_title, poster_path, release_date, overview };
         });
         this.setState({ movies: moviesResult });
       })
