@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { searchRequest } from "../../helpers/api_requests";
 import Movies from "../Movies";
+import Header_container from "../Header/Header_container";
 
 class Search_container extends Component {
   constructor(props) {
@@ -24,9 +25,9 @@ class Search_container extends Component {
   }
 
   render() {
-    console.log(this.state.movies);
     return (
       <div>
+        <Header_container />
         <h1>Movies searched results</h1>
         <Movies moviesData={this.state.movies} />
       </div>
