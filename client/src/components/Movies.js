@@ -1,12 +1,22 @@
 import React, { Component } from "react";
+import Styled from "styled-components";
 
+const MoviesContainer = Styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const EachMovieContainer = Styled.div`
+  width: 30%;
+  margin: 10px;
+`;
 class Directory extends Component {
   render() {
     return (
-      <div>
+      <MoviesContainer>
         {this.props.moviesData.map(movie => {
           return (
-            <div key={movie.id}>
+            <EachMovieContainer key={movie.id}>
               <p>Title: {movie.original_title}</p>
               {movie.poster_path ? (
                 <img
@@ -16,10 +26,11 @@ class Directory extends Component {
                 false
               )}
               <p>Release date: {movie.release_date}</p>
-            </div>
+              <p> {movie.overview}</p>
+            </EachMovieContainer>
           );
         })}
-      </div>
+      </MoviesContainer>
     );
   }
 }

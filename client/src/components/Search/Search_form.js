@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Styled from "styled-components";
 
+const SearchForm = Styled.form`
+  align-self: center
+`;
+
+const SearchInput = Styled.input`
+padding: 7px;
+border: 2px solid lightsteelblue;
+width: 140px;
+font-size: 1rem
+`;
 class Search_form extends Component {
   constructor(props) {
     super(props);
@@ -18,15 +29,14 @@ class Search_form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          placeholder="Search"
+      <SearchForm onSubmit={this.handleSubmit}>
+        <SearchInput
+          placeholder="Search for a movie"
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <input type="submit" />
-      </form>
+      </SearchForm>
     );
   }
 }
