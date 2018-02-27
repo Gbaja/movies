@@ -12,3 +12,18 @@ export const directoryRequest = () => {
       throw new Error("Fetching failed");
     });
 };
+
+export const searchRequest = movieName => {
+  return fetch(
+    `https://api.themoviedb.org/3/search/movie?api_key=5d091ecac9e2f169b67b9d1a11ff3d73&query=${movieName}`
+  )
+    .then(res => {
+      if (res.status !== 200) {
+        console.log("Something went wrong with the request");
+      }
+      return res.json();
+    })
+    .catch(err => {
+      throw new Error("Fetching failed");
+    });
+};

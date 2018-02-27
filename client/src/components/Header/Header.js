@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <header className="main">
-        <h1>Movies</h1>
+        <p>Movies</p>
         <p>
           Powered by <a href="https://www.themoviedb.org/">THE MOVIE DB</a>
         </p>
