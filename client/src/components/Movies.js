@@ -4,11 +4,13 @@ import Styled from "styled-components";
 const MoviesContainer = Styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 `;
 
 const EachMovieContainer = Styled.div`
-  width: 30%;
+  width: 250px;
   margin: 10px;
+  text-align: center;
 `;
 class Directory extends Component {
   render() {
@@ -18,6 +20,7 @@ class Directory extends Component {
           return (
             <EachMovieContainer key={movie.id}>
               <p>Title: {movie.original_title}</p>
+              <p>Release date: {movie.release_date}</p>
               {movie.poster_path ? (
                 <img
                   src={`http://image.tmdb.org/t/p/w185//${movie.poster_path}`}
@@ -25,7 +28,6 @@ class Directory extends Component {
               ) : (
                 false
               )}
-              <p>Release date: {movie.release_date}</p>
               <p> {movie.overview}</p>
             </EachMovieContainer>
           );

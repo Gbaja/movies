@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { directoryRequest } from "../../helpers/api_requests";
 import Movies from "../Movies";
+import { MoviesContainer } from "../../style";
 
 class DirectoryContainer extends Component {
   constructor(props) {
@@ -29,10 +30,10 @@ class DirectoryContainer extends Component {
 
   render() {
     return (
-      <div>
+      <MoviesContainer>
         <h1>Top movies </h1>
         <Movies moviesData={this.state.movies} />
-      </div>
+      </MoviesContainer>
     );
   }
 }
