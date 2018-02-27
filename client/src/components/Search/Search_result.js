@@ -4,7 +4,7 @@ class Search_result extends Component {
   render() {
     return (
       <div>
-        {this.props.searchData.map(search => {
+        {this.props.moviesData.map(search => {
           return (
             <div key={search.id}>
               <p>Title: {search.original_title}</p>

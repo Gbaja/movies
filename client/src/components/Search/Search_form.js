@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
-class Search extends Component {
+class Search_form extends Component {
   constructor(props) {
     super(props);
     this.state = { searchValue: "" };
@@ -12,7 +12,6 @@ class Search extends Component {
   };
 
   handleSubmit = event => {
-    event.preventDefault();
     const movieSearched = this.state.searchValue.split(" ").join("+");
     this.props.history.push(`/search/${movieSearched}`);
   };
@@ -32,4 +31,4 @@ class Search extends Component {
   }
 }
 
-export default withRouter(Search);
+export default withRouter(Search_form);
