@@ -11,7 +11,6 @@ class Search_container extends Component {
 
   componentDidMount() {
     const movie = this.props.match.params.movieSearched;
-    console.log("movie searched: ", movie);
     searchRequest(movie)
       .then(res => {
         const searchResult = res.results.map(result => {
@@ -26,7 +25,6 @@ class Search_container extends Component {
   }
 
   render() {
-    console.log(this.state.movies);
     return (
       <div>
         <Header_container />
