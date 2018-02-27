@@ -8,9 +8,13 @@ class Directory extends Component {
           return (
             <div key={movie.id}>
               <p>Title: {movie.original_title}</p>
-              <img
-                src={`http://image.tmdb.org/t/p/w185//${movie.poster_path}`}
-              />
+              {movie.poster_path ? (
+                <img
+                  src={`http://image.tmdb.org/t/p/w185//${movie.poster_path}`}
+                />
+              ) : (
+                false
+              )}
               <p>Release date: {movie.release_date}</p>
             </div>
           );
